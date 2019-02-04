@@ -11,12 +11,14 @@ class Application
       
        item = @@items.detect {|i| i.name == item_name}
       
-      if item = 
-        resp.write "item not found"
-        resp.status = 400
+      if item = @@items.detect {|i| i.name == item_name}
+        resp.write "#{item.name} : $#{item.price}"
       else
-        resp.write item.price
+        resp.write "Item not found"
+        resp.status = 400
       end
+      
+      
     else
       resp.write "Route not found"
       resp.status = 404
