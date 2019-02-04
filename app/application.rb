@@ -10,6 +10,8 @@ class Application
       
       item =@@items.find{|i| i.name == item.name}
       
+      if item.empty?
+      
       
       resp.write "You requested the songs"
     else
