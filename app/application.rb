@@ -11,9 +11,11 @@ class Application
       item =@@items.find{|i| i.name == item.name}
       
       if item.empty?
-      
-      
-      resp.write "You requested the songs"
+        resp.write "item not found"
+        resp.status = 400
+      else
+        resp.write item.price
+      end
     else
       resp.write "Route not found"
       resp.status = 404
