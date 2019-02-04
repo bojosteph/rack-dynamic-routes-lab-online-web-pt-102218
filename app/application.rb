@@ -10,7 +10,7 @@ class Application
       
       item =@@items.find{|i| i.name == item.name}
       
-      
+      if item.nil?
         resp.write "item not found"
         resp.status = 400
       else
