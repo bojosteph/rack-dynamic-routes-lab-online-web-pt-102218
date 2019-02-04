@@ -11,7 +11,7 @@ class Application
       
        item = @@items.detect {|i| i.name == item_name}
       
-      if item.nil?
+      if item = 
         resp.write "item not found"
         resp.status = 400
       else
